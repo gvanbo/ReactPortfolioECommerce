@@ -8,13 +8,12 @@ class SignUp extends Component {
     constructor(){
         super();
     
-
         this.state= {
         displayName: '',
         email: '',
         password: '',
         confirmPassword: ''
-        }
+        };
     }
 
     handleSubmit = async e => {
@@ -35,18 +34,17 @@ class SignUp extends Component {
                 email: '',
                 password: '',
                 confirmPassword: ''
-            })
+            });
 
         } catch (error){
             console.log(error); 
         }
-
-    }
+    };
 
     handleChange = e => {
         const { name, value} = e.target;
         this.setState({[name]: value})
-    }
+    };
 
     render(){
         const {displayName, email, password, confirmPassword} = this.state
@@ -90,7 +88,7 @@ class SignUp extends Component {
                     <CustomButton type='submit'>SIGN UP</CustomButton>
                 </form>
             </div>
-        )
+        );
     }
 }
 
