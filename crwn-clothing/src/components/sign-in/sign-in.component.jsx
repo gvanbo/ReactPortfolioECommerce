@@ -2,21 +2,30 @@ import React, { Component } from 'react'
 import './sign-in.styles.scss'
 import FormInput from '../form-input/form-input.component'
 import CustomButton from '../custom-button/custom-button.component'
+import { auth, signInWithGoogle } from '../../firebase/firebase.utils'
 
 class SignIn extends Component {
     constructor(props) {
-        super(props)
+        super(props);
 
         this.state = {
             email: '',
             password: ''
-        }
+        };
     }
 
-    handleSubmit = e => {
+    handleSubmit = async e => {
         e.preventDefault();
-        this.setState({ email: '', password: ''})
-    }
+
+        const { email, password } = this.state;
+
+        try {
+            await auth.signInWithEmailAndPassword(email, password);
+            this.setState({ email: '', password:''});
+        } catch (error) {
+            console.log(error);
+        }
+    };
 
     handleChange = e => {
         const { value, name } = e.target;
@@ -34,8 +43,8 @@ class SignIn extends Component {
                     <FormInput 
                         name='email'
                         type='email'
-                        value={this.state.email} 
                         handleChange={this.handleChange} 
+                        value={this.state.email} 
                         label='email'
                         required 
                     />
@@ -47,14 +56,19 @@ class SignIn extends Component {
                         label='password'
                         required
                     />
-                    <CustomButton type='submit'>
-                        SIGN IN
-                    </ CustomButton>
+                    <div className='buttons'>
+                        <CustomButton type='submit'>
+                            SIGN IN
+                        </ CustomButton>
+                        <CustomButton onClick={signInWithGoogle} isGoogleSignIn>
+                            SIGN IN With GOOGLE
+                        </ CustomButton>
+                    </div>
                 </form>
             </div>
 
-        )
+        );
     }
 }
 
-export default SignIn
+export default SignIn;
