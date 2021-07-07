@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom'
+import { createStructuredSelector } from 'reselect';
+
+
 import './App.css';
 import HomePage from './pages/homepage.component';
 import ShopPage from './pages/shop/shop.component';
@@ -8,6 +11,7 @@ import SignInUpPage from './pages/sign-in-up/sign-in-up.component';
 import { auth, createUserProfileDocument } from './firebase/firebase.utils'
 import { connect } from 'react-redux'
 import { setCurrentUser } from './redux/user/user.actions'
+import { selectCurrentUser } from './redux/user/user.selectors'
 
 class App extends Component {
   unsubscribeFromAuth = null;
@@ -56,8 +60,8 @@ class App extends Component {
 }
 
 //get access to this.props.currentUser
-const mapStateToProps = ({ user }) => ({
-  currentUser: user.currentUser
+const mapStateToProps = createStructuredSelector({
+  currentUser: selectCurrentUser
 })
 
 //dispatch tells redux that any object passed will be a reducer
