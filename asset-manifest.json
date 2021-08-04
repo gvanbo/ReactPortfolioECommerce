@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/ReactPortfolioECommerce/static/css/main.6adb1449.chunk.css",
+    "main.js": "/ReactPortfolioECommerce/static/js/main.8e904098.chunk.js",
+    "main.js.map": "/ReactPortfolioECommerce/static/js/main.8e904098.chunk.js.map",
+    "runtime-main.js": "/ReactPortfolioECommerce/static/js/runtime-main.d069c87e.js",
+    "runtime-main.js.map": "/ReactPortfolioECommerce/static/js/runtime-main.d069c87e.js.map",
+    "static/js/2.13a6843b.chunk.js": "/ReactPortfolioECommerce/static/js/2.13a6843b.chunk.js",
+    "static/js/2.13a6843b.chunk.js.map": "/ReactPortfolioECommerce/static/js/2.13a6843b.chunk.js.map",
+    "index.html": "/ReactPortfolioECommerce/index.html",
+    "static/css/main.6adb1449.chunk.css.map": "/ReactPortfolioECommerce/static/css/main.6adb1449.chunk.css.map",
+    "static/js/2.13a6843b.chunk.js.LICENSE.txt": "/ReactPortfolioECommerce/static/js/2.13a6843b.chunk.js.LICENSE.txt",
+    "static/media/crown.3a4e2b15.svg": "/ReactPortfolioECommerce/static/media/crown.3a4e2b15.svg",
+    "static/media/shopping-bag.a688874f.svg": "/ReactPortfolioECommerce/static/media/shopping-bag.a688874f.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.d069c87e.js",
+    "static/js/2.13a6843b.chunk.js",
+    "static/css/main.6adb1449.chunk.css",
+    "static/js/main.8e904098.chunk.js"
+  ]
+}
